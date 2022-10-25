@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-#Abstract Methods
+#Abstract Classes
 class CoffeeConfig(ABC):
     @abstractmethod
     def setName(self, name:str):
@@ -23,7 +23,7 @@ class CoffeeConfig(ABC):
     def toString(self):
         pass
     
-class CoffeeMaker(ABC):
+class CoffeeRecipe(ABC):
     @abstractmethod
     def addName(self):
         pass
@@ -69,7 +69,7 @@ class Coffee(CoffeeConfig):
     def toString(self):
         return f"Order Details: \nName: {self.name}\nEspresso Value (oz.): {self.espresso}\nSugar Value(oz.): {self.sugar}\nCreamer: {self.creamer}\nMilk: {self.milk}\nIced? {self.cold}"
     
-class LatteCoffeeMaker(CoffeeMaker):
+class LatteCoffeeRecipe(CoffeeRecipe):
     coffee: Coffee
     def __init__(self):
         self.coffee = Coffee()
@@ -88,7 +88,7 @@ class LatteCoffeeMaker(CoffeeMaker):
     def getCoffee(self):
         return self.coffee
 
-class FlatWhiteCoffeeMaker(CoffeeMaker):
+class FlatWhiteCoffeeRecipe(CoffeeRecipe):
     coffee: Coffee
     def __init__(self):
         self.coffee = Coffee()
@@ -108,18 +108,18 @@ class FlatWhiteCoffeeMaker(CoffeeMaker):
         return self.coffee
     
 class Barista:
-    coffeeMaker: CoffeeMaker
-    def __init__(self, coffeeMaker:CoffeeMaker):
-        self.coffeeMaker = coffeeMaker
+    CoffeeRecipe: CoffeeRecipe
+    def __init__(self, CoffeeRecipe:CoffeeRecipe):
+        self.CoffeeRecipe = CoffeeRecipe
     def getCoffee(self):
-        return self.coffeeMaker.getCoffee()
+        return self.CoffeeRecipe.getCoffee()
     def makeCoffee(self):
-        self.coffeeMaker.addName()
-        self.coffeeMaker.addEspresso()
-        self.coffeeMaker.addSugar()
-        self.coffeeMaker.addCreamer()
-        self.coffeeMaker.addMilk()
-        self.coffeeMaker.addIce()
+        self.CoffeeRecipe.addName()
+        self.CoffeeRecipe.addEspresso()
+        self.CoffeeRecipe.addSugar()
+        self.CoffeeRecipe.addCreamer()
+        self.CoffeeRecipe.addMilk()
+        self.CoffeeRecipe.addIce()
         
 
     
