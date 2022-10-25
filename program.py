@@ -1,7 +1,9 @@
-from builder import *
+from barista import *
+from coffee import *
+from coffeerecipes import *
 
-flatWhiteCoffeeRecipe:CoffeeRecipe = FlatWhiteCoffeeRecipe()
-latteCoffeeRecipe:CoffeeRecipe = LatteCoffeeRecipe()
+flatWhiteCoffeeRecipe:CoffeeMaking = FlatWhiteCoffeeRecipe()
+latteCoffeeRecipe:CoffeeMaking = LatteCoffeeRecipe()
 
 barista: Barista = Barista(flatWhiteCoffeeRecipe)
 barista.makeCoffee()
