@@ -2,6 +2,24 @@ from coffeemaking import *
 from coffee import *
 
 #-------Concrete Builders----------#
+class BlackCoffeeRecipe(CoffeeMaking):
+    coffee: Coffee
+    def __init__(self):
+        self.coffee = Coffee()
+    def addName(self):
+        self.coffee.setName('Black')
+    def addEspresso(self):
+        self.coffee.setEspresso(3)
+    def addSugar(self):
+        self.coffee.setSugar(0)
+    def addCreamer(self):
+        self.coffee.setCreamer(False)
+    def addMilk(self):
+        self.coffee.setMilk(False)
+    def addIce(self):
+        self.coffee.setCold(False)
+    def getCoffee(self):
+        return self.coffee
 class LatteCoffeeRecipe(CoffeeMaking):
     coffee: Coffee
     def __init__(self):
@@ -17,7 +35,7 @@ class LatteCoffeeRecipe(CoffeeMaking):
     def addMilk(self):
         self.coffee.setMilk(True)
     def addIce(self):
-        self.coffee.setCold(True)
+        self.coffee.setCold(False)
     def getCoffee(self):
         return self.coffee
 
