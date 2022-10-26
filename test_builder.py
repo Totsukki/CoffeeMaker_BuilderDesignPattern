@@ -70,27 +70,6 @@ class TestBuilder(unittest.TestCase):
     self.assertEqual(black.creamer,expectedCreamer)
     self.assertEqual(black.milk,expectedMilk)
     self.assertEqual(black.cold,expectedCold)
-  def test_getCoffee_should_return_a_flat_white_coffee_object(self):
-    
-  #Arrange
-    expectedName="Flat White"
-    expectedEspresso=2
-    expectedSugar=0
-    expectedCreamer=False
-    expectedMilk=True
-    expectedCold=False
-  #Act
-    b = Barista(FlatWhiteCoffeeRecipe())
-    b.makeCoffee()
-    fw = b.getCoffee()
-    
-  #Assert
-    self.assertEqual(fw.name,expectedName)
-    self.assertEqual(fw.espresso,expectedEspresso)
-    self.assertEqual(fw.sugar,expectedSugar)
-    self.assertEqual(fw.creamer,expectedCreamer)
-    self.assertEqual(fw.milk,expectedMilk)
-    self.assertEqual(fw.cold,expectedCold)
 
   def test_setSugar_should_change_sugar_level_of_the_coffee(self):
   #Arrange
